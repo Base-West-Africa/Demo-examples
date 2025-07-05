@@ -9,7 +9,8 @@ import { config } from './wagmi.ts'
 
 import './index.css'
 
-globalThis.Buffer = Buffer
+// Fix TypeScript error by properly typing the globalThis assignment
+;(globalThis as any).Buffer = Buffer
 
 const queryClient = new QueryClient()
 
