@@ -1,28 +1,26 @@
-import { http, cookieStorage, createConfig, createStorage } from 'wagmi'
-import { mainnet, sepolia } from 'wagmi/chains'
-import { coinbaseWallet, injected, walletConnect } from 'wagmi/connectors'
+import { http, createConfig } from "wagmi";
+import { baseSepolia } from "wagmi/chains";
+import { coinbaseWallet } from "wagmi/connectors";
 
-export function getConfig() {
-  return createConfig({
-    chains: [mainnet, sepolia],
-    connectors: [
-      injected(),
-      coinbaseWallet(),
-      walletConnect({ projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID }),
-    ],
-    storage: createStorage({
-      storage: cookieStorage,
+const config = createConfig({
+  chains: [baseSepolia],
+  connectors: [
+    coinbaseWallet({
+      appName: "Paymaster Gasless Tx With WAGMI",
+      preference: "smartWalletOnly",
+      version: "4",
     }),
-    ssr: true,
-    transports: {
-      [mainnet.id]: http(),
-      [sepolia.id]: http(),
-    },
-  })
-}
+  ],
+  transports: {
+    [baseSepolia.id]: http(process.env.NEXT_PUBLIC_RPC_URL),
+  },
+  ssr: true,
+});
 
-declare module 'wagmi' {
+export const getConfig = () => config;
+
+declare module "wagmi" {
   interface Register {
-    config: ReturnType<typeof getConfig>
+    config: typeof config;
   }
 }
