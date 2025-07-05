@@ -4,6 +4,8 @@ import { createBundlerClient } from "viem/account-abstraction";
 import { account, client, RPC_URL } from "./config.js";
 import { abi } from "./example-app-abi.js";
 
+console.log("🚀 Starting gasless NFT minting process...");
+
 const bundlerClient = createBundlerClient({
   account,
   client,
@@ -12,6 +14,7 @@ const bundlerClient = createBundlerClient({
 });
 
 const nftContractAddress = "0xd33bb1C4c438600db4611bD144fDF5048f6C8E44"; // DEMO NFT Contract Deployed on Mainnet (base)
+
 const mintTo = {
   abi: abi,
   functionName: "mintTo",
@@ -26,17 +29,20 @@ account.userOperation = {
       userOperation
     );
     estimate.preVerificationGas = estimate.preVerificationGas * 2n;
-
     return estimate;
   },
 };
 
 try {
+  console.log("📤 Sending user operation...");
+  
   const userOpHash = await bundlerClient.sendUserOperation({
     account,
     calls,
     paymaster: true,
   });
+
+  console.log("⏳ Waiting for transaction receipt...");
 
   const receipt = await bundlerClient.waitForUserOperationReceipt({
     hash: userOpHash,
@@ -48,6 +54,6 @@ try {
   );
   process.exit(0);
 } catch (error) {
-  console.error("Error sending transaction: ", error);
+  console.error("❌ Error sending transaction: ", error);
   process.exit(1);
 }
