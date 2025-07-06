@@ -1,6 +1,6 @@
-# Demo Examples - Web3 & Blockchain Tutorials
+# Demo Examples - Base Blockchain Web3 Tutorials
 
-This repository contains a collection of practical examples and tutorials for building Web3 applications, focusing on gasless transactions, smart wallets, and modern blockchain development patterns.
+This repository contains a collection of practical examples and tutorials for building Web3 applications on **Base blockchain**, focusing on gasless transactions, smart wallets, and modern blockchain development patterns.
 
 ## 🚀 Quick Start
 
@@ -10,7 +10,7 @@ Each example is self-contained and can be run independently. Navigate to the spe
 
 ```
 demo-examples/
-├── gasless-examples/          # Gasless transaction implementations
+├── gasless-examples/          # Gasless transaction implementations for Base
 │   ├── wagmi+next+paymaster/  # Next.js + Wagmi + Paymaster integration
 │   ├── wagmi+vite+paymaster/  # Vite + Wagmi + Paymaster integration
 │   └── viem-gasless/          # Pure Viem gasless transaction example
@@ -24,11 +24,11 @@ demo-examples/
 #### Wagmi + Next.js + Paymaster
 **Location**: `gasless-examples/wagmi+next+paymaster/`
 
-A complete Next.js application demonstrating gasless transactions using Wagmi hooks and a paymaster service.
+A complete Next.js application demonstrating gasless transactions on Base blockchain using Wagmi hooks and a paymaster service.
 
 **Features:**
 - Next.js 14 with App Router
-- Wagmi v2 for Ethereum interactions
+- Wagmi v2 for Base blockchain interactions
 - Paymaster integration for gasless transactions
 - TypeScript support
 - Modern React patterns
@@ -43,11 +43,11 @@ npm run dev
 #### Wagmi + Vite + Paymaster
 **Location**: `gasless-examples/wagmi+vite+paymaster/`
 
-A Vite-based application showcasing gasless transactions with Wagmi and paymaster integration.
+A Vite-based application showcasing gasless transactions on Base blockchain with Wagmi and paymaster integration.
 
 **Features:**
 - Vite for fast development
-- Wagmi v2 integration
+- Wagmi v2 integration for Base
 - Paymaster service integration
 - Hot module replacement
 
@@ -61,10 +61,10 @@ npm run dev
 #### Viem Gasless
 **Location**: `gasless-examples/viem-gasless/`
 
-A minimal example demonstrating gasless transactions using pure Viem without any framework dependencies.
+A minimal example demonstrating gasless transactions on Base blockchain using pure Viem without any framework dependencies.
 
 **Features:**
-- Pure Viem implementation
+- Pure Viem implementation for Base
 - No framework dependencies
 - Simple and lightweight
 - Perfect for learning the basics
@@ -80,13 +80,13 @@ node index.js
 
 **Location**: `smart-wallet-demo/`
 
-A comprehensive smart wallet implementation built with Next.js, featuring modern Web3 development patterns.
+A comprehensive smart wallet implementation built with Next.js for Base blockchain, featuring modern Web3 development patterns.
 
 **Features:**
 - Next.js 15 with App Router
-- Smart wallet functionality
+- Smart wallet functionality for Base
 - SIWE (Sign-In with Ethereum) integration
-- Wagmi v2 for blockchain interactions
+- Wagmi v2 for Base blockchain interactions
 - TanStack Query for data fetching
 - Tailwind CSS for styling
 - TypeScript support
@@ -105,7 +105,8 @@ Before running any of these examples, make sure you have:
 - **Node.js** (v18 or higher)
 - **npm** or **yarn** package manager
 - **MetaMask** or another Web3 wallet installed
-- **Ethereum testnet** (Sepolia, Goerli, etc.) for testing
+- **Base testnet** (Base Sepolia) for testing
+- **Base mainnet** for production deployment
 
 ## 🔧 Environment Setup
 
@@ -118,36 +119,53 @@ NEXT_PUBLIC_PAYMASTER_API_KEY=your_api_key
 
 # For smart wallet demo
 NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_project_id
+
+# Base blockchain configuration
+NEXT_PUBLIC_BASE_CHAIN_ID=8453  # Base mainnet
+# or
+NEXT_PUBLIC_BASE_CHAIN_ID=84532 # Base Sepolia testnet
 ```
 
 ## 📚 Learning Path
 
 ### Beginner
-1. Start with `viem-gasless/` to understand the basics of gasless transactions
-2. Move to `wagmi+next+paymaster/` to see a complete application
-3. Explore `smart-wallet-demo/` for advanced patterns
+1. Start with `viem-gasless/` to understand the basics of gasless transactions on Base
+2. Move to `wagmi+next+paymaster/` to see a complete Base application
+3. Explore `smart-wallet-demo/` for advanced Base patterns
 
 ### Intermediate
-- Customize the paymaster integration
-- Add your own smart contract interactions
-- Implement additional wallet features
+- Customize the paymaster integration for Base
+- Add your own smart contract interactions on Base
+- Implement additional wallet features for Base ecosystem
 
 ### Advanced
-- Build your own paymaster service
-- Create custom hooks for specific use cases
-- Integrate with other blockchain networks
+- Build your own paymaster service for Base
+- Create custom hooks for specific Base use cases
+- Integrate with other Base ecosystem tools and services
 
 ## 🔗 Useful Resources
 
+- [Base Documentation](https://docs.base.org/)
+- [Base Bridge](https://bridge.base.org/)
+- [Base Explorer](https://basescan.org/)
 - [Wagmi Documentation](https://wagmi.sh/)
 - [Viem Documentation](https://viem.sh/)
 - [Next.js Documentation](https://nextjs.org/docs)
-- [Ethereum Development](https://ethereum.org/developers/)
+- [Coinbase Developer Platform](https://www.coinbase.com/developer-platform)
+
+## 🌐 Base Blockchain Information
+
+**Base** is a secure, low-cost, developer-friendly L2 blockchain built to bring the next billion users to Web3. It's built on the OP Stack and secured by Ethereum.
+
+- **Chain ID**: 8453 (mainnet), 84532 (testnet)
+- **RPC URL**: https://mainnet.base.org
+- **Block Explorer**: https://basescan.org
+- **Bridge**: https://bridge.base.org
 
 ## 🤝 Contributing
 
 Feel free to contribute to this repository by:
-- Adding new examples
+- Adding new Base blockchain examples
 - Improving existing implementations
 - Fixing bugs or issues
 - Updating documentation
@@ -165,4 +183,4 @@ If you encounter any issues or have questions:
 
 ---
 
-**Happy Building! 🚀** 
+**Happy Building on Base! 🚀** 
